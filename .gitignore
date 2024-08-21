@@ -1,7 +1,8 @@
-# folders
+env/
 __pycache__/
+venv/
 
-
-# files
+.env
 *.txt
-*.env
+*.log
+*.zip
