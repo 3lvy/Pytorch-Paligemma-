@@ -1,6 +1,6 @@
 This is a PyTorch implementation of Google's [PaliGemma Visual Language Model](https://ai.google.dev/gemma/docs/paligemma) from scratch in PyTorch exploring components such as the [SigLip Vision Model](https://arxiv.org/abs/2303.15343) and [Gemma Language Model](https://arxiv.org/abs/2403.08295). 
 
-The model takes both image and text as input and generates text as output. Additionally, it can perform a range of computer-vision tasks including:
+The model takes both image and text as input and generates text as output. Additionally, it can be fine-tuned on a range of computer-vision tasks including:
 
 . Image and Video Captioning,
 
