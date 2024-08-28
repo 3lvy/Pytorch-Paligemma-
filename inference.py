@@ -10,7 +10,7 @@ def move_inputs_to_device(model_inputs: dict, device: str):
     model_inputs = {k: v.to(device) for k, v in model_inputs.items()}
     return model_inputs
 
-def sample_top_p(probs: torch.Tensor, p: float):
+def _sample_top_p(probs: torch.Tensor, p: float):
     # (B, vocab_size)
     probs_sort, probs_idx = torch.sort(probs, dim=-1, descending=True)
     # (B, vocab_size)
@@ -75,7 +75,7 @@ def test_inference(
         if do_sample:
             # Apply temperature
             next_token_logits = torch.softmax(next_token_logits / temperature, dim=-1)
-            next_token = sample_top_p(next_token_logits, top_p)
+            next_token = _sample_top_p(next_token_logits, top_p)
         else:
             next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)
         assert next_token.size() == (1,1)
@@ -92,6 +92,10 @@ def test_inference(
         )
     
     generated_tokens = torch.cat(generated_tokens, dim=-1)
+    # Decode the generated tokens
+    decoded =  processor.tokenizer.decode(generated_tokens, skip_generated_tokens=True)
+
+    print(prompt + decoded)
      
 
 def main(

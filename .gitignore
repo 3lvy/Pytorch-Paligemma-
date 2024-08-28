@@ -1,6 +1,7 @@
 env/
 __pycache__/
 venv/
+Images/
 
 .env
 *.txt

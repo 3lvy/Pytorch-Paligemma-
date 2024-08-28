@@ -15,16 +15,16 @@ def load_hf_model(model_path: str, device: str) -> Tuple[PaliGemmaForConditional
     # Find all the *.safetensors files
     safetensors_files = glob.glob(os.path.join(model_path, "*.safetensors"))
 
-    # ... andload them one by oine inthe tensors dictionary
+    # ... and load them one by in the tensors dictionary
     tensors = {}
     for safetensors_file in safetensors_files:
         with safe_open(safetensors_file, framework="pt", device="cpu") as f:
-            for key in f.keys:
+            for key in f.keys():
                 tensors[key] = f.get_tensor(key)
     
     # Load the model's config
     with open(os.path.join(model_path, "config.json"), "r") as f:
-        model_config_file = json.load()
+        model_config_file = json.load(f)
         config = PaliGemmaConfig(**model_config_file)
 
     # Create the model using the configuration
