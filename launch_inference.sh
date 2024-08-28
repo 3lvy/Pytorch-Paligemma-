@@ -1,8 +1,8 @@
 #!/bin/bash
 
-MODEL_PATH="D:\\projects\\models\\paligemma-3b-pt-224"
-PROMPT="How many birds are in the image"
-IMAGE_FILE_PATH="D:\\VLM\Pytorch Paligemma Multimodal Language Model\\Images\\testimage.png"
+MODEL_PATH=""
+PROMPT=""
+IMAGE_FILE_PATH=""
 MAX_TOKENS_TO_GENERATE=100
 TEMPERATURE=0.8
 TOP_P=0.9
