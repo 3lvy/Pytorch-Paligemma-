@@ -33,5 +33,5 @@ Currently working on quantization for faster inference and efficient fine-tuning
 
 
 ### Learning Resources
-This repo is greatly influenced by Umar Jamil's tutorial that explores all key concepts of PaliGemma from first principles.
+This repo is largely taken from Umar Jamil's course that explores all key concepts of PaliGemma from first principles.
 You can find Umar's [tutorial here](https://www.youtube.com/watch?v=vAmKB7iPkWw&list=WL&index=2)
